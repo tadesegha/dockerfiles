@@ -16,4 +16,4 @@ COPY SQLitePCLRaw.core.dll /tools/omnisharp-roslyn/bin/Release/OmniSharp.Http.Dr
 EXPOSE 80
 VOLUME /data
 WORKDIR /data
-CMD [ "mono", "/tools/omnisharp-roslyn/bin/Release/OmniSharp.Http.Driver/net461/OmniSharp.exe", "-s", "/data" ]
+CMD [ "mono", "/tools/omnisharp-roslyn/bin/Release/OmniSharp.Http.Driver/net461/OmniSharp.exe", "-s", "/data", "-p", "80" ]
