@@ -84,13 +84,6 @@ augroup help
   autocmd BufEnter * if &buftype == "help" | wincmd L | endif
 augroup END
 
-augroup csharp
-  autocmd!
-  autocmd Filetype cs packadd omnisharp-vim
-  autocmd Filetype cs packadd vim-csharp
-  autocmd Filetype cs packadd ale
-augroup END
-
 augroup typescript
   autocmd!
 
@@ -111,8 +104,6 @@ augroup END
 
 augroup javascript
   autocmd!
-  autocmd Filetype javascript packadd ale
-
   autocmd Filetype javascript nnoremap <buffer> <LocalLeader>gd <c-]>
   autocmd Filetype javascript nnoremap <buffer> <LocalLeader>vgd :vs<cr><c-]>
 augroup END
