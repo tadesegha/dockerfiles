@@ -63,6 +63,8 @@ let maplocalleader = ","
 
 " noop key mappings
 nnoremap :w<cr> :throw "you should be using <c-s> to save"<cr>
+nnoremap :vs<cr> :throw "you should be using <c-w>v to vertically split buffer"<cr>
+nnoremap :sp<cr> :throw "you should be using <c-w>s to horizontally split buffer"<cr>
 
 " key mappings
 nnoremap <Leader><Leader> <c-^>
