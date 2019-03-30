@@ -10,10 +10,15 @@ RUN apk add curl git python3 gcc musl-dev neovim py3-greenlet fzf the_silver_sea
       pip3 install pynvim
 
 COPY init.vim /root/.config/nvim/init.vim
+COPY bin/rg /bin/rg
 
-RUN nvim -c ':UpdateRemotePlugins | :qa' && \
-      nvim -c ':PlugInstall | :qa' && \
-      mkdir /data
+RUN nvim --headless +PlugInstall +UpdateRemotePlugins +qa && \
+        apk add neovim-doc && \
+        npm install -g typescript
+
+RUN cd /root/.config/nvim/plugged/nvim-typescript && \
+  ./install.sh && \
+  nvim --headless +UpdateRemotePlugins +qa
 
 VOLUME /data
 WORKDIR /data
